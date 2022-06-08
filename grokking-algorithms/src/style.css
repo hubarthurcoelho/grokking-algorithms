@@ -1,0 +1,40 @@
+.wanted {
+  border: 5px solid green;
+  padding: 10px;
+  width: 5%;
+  text-align: center;
+}
+
+.item {
+  border: 5px solid rgb(8, 10, 8);
+  padding: 10px;
+  width: 5%;
+  text-align: center;
+}
+
+
+.bingo {
+  border: 5px solid green;
+  padding: 10px;
+  width: 5%;
+  background-color: rgba(8, 129, 8, 0.527);
+  color: white;
+  font-weight: bold;
+}
+
+.boundaries{
+  border: 5px solid yellow;
+}
+
+.hunch{
+  border: 5px solid orangered;
+}
+
+.array-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 10px ;
+}
