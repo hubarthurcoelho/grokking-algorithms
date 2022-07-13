@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.quicksort-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px;
+}
+
+.pivot {
+  background-color: green;
+  border: 1px solid black;
+  padding: 20px 40px;
+}
+
+.normal-number {
+  background-color: yellow;
+  border: 1px solid black;
+  padding: 20px 40px;
+}
+
+.all-sorted {
+  background-color: rgba(0, 128, 0, 0.381);
+  font-weight: bold;
+  border: 1px solid green;
+  padding: 20px 40px;
+}
