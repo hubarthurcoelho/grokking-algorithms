@@ -113,8 +113,9 @@ class BinarySearchPage extends Component {
       simpleIterationCount,
     } = this.state;
     return (
-      <div>
-        <img className="background" src="https://itforum.com.br/wp-content/uploads/2018/10/Pessoas-confiam-nos-algoritmos-mais-do-que-as-empresas-percebem-768x415.jpg" alt="background"/>
+      <>
+      <img className="background" src="https://wallpaper.dog/large/20394426.jpg" alt="background"/>
+      <div className="binary-body">
         <h2>Pesquisa Binária</h2>
         <h3>O que é?</h3>
         <p>A pesquisa binária é um algoritmo utilizado para econtrar um valor em um array.
@@ -127,7 +128,9 @@ class BinarySearchPage extends Component {
           elementos serão elimitados por cada iteração. Isso acontece porque a pesquisa binária funciona
           em tempo logarítimico. Veja os gráficos abaixo e entenda a diferença:
         </p>
+        <div className="bigO-container">
         <img className="bigO" src="https://lh4.googleusercontent.com/HTj2Ri2kXpmYdnLVJB4pGk7fnv_XpYwNWTtGGo4vCu9F2vYm6LeFST-q_fRYkcmRN9vrMtsh4-WK0Tx-F_fOaKHYAGrKkELBfitbe0qeJlmnZ7Rir7ikW9YFc_QqjXY_McJrNyX7" alt="tempos de execução de algoritmos"/>
+        </div>
         <p>A notação "big O" serve para descrever o comportamento limitante de uma função (nesse caso um algoritmo) quando o seu valor tende ao infinito. em outras palavras, é uma forma de medir o quanto um algoritmo é eficiente. Ele leva em consideração o pior cenário de execução (no caso de uma pesquisa simples, onde os elementos são checados de um por um, o pior cenário é quando o elemento escolhido é o último elemento do array). Na imagem, a pesquisa binária se enquadra na curva amarela. Percebe-se que, mesmo quando se aumenta muito o número de elementos em um array, o tempo de execução aumenta em uma escala infinitamente menor. Vamos ver como isso funciona na prática? Utilize o esquema montado abaixo que comparada os tempos de busca da pesquisa binária vs pesquisa simples. Divirta-se explodindo sua mente!</p>
         <article className="array-container">
           {array.map((num, index) => {
@@ -206,6 +209,7 @@ class BinarySearchPage extends Component {
           Rodar Pesquisa Binária
         </button>
       </div>
+      </>
     );
   }
 }
