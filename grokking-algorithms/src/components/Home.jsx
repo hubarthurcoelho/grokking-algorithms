@@ -8,6 +8,7 @@ class Home extends Component {
       <h1>Entendendo Algoritmos</h1>
       <h3>Algoritmos disponíveis:</h3>
       <Link to="/binarySearch" >Pesquisa binária</Link>
+      <Link to="/quickSort" >Quick Sort</Link>
       </div>
     );
   }
