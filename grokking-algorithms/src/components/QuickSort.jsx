@@ -2,15 +2,23 @@ import React from "react";
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+const INITIAL_STATE = {
+  array: [4, 3, 10, 5, 1, 2, 7],
+  secondArray: [4, 3, 10, 5, 1, 2, 7],
+  arrayOfPivots: [],
+  hasBeenQuickSorted: false,
+  hasBeenSorted: false,
+  comparedValues: [],
+  resetDisabled: false,
+  orderDisabled: false,
+}
+
 class QuickSort extends React.Component {
-  state = {
-    array: [4, 3, 10, 5, 1, 2, 7],
-    secondArray: [4, 3, 10, 5, 1, 2, 7],
-    arrayOfPivots: [],
-    hasBeenQuickSorted: false,
-    hasBeenSorted: false,
-    comparedValues: [],
-  };
+  state = INITIAL_STATE;
+
+  reset = () => {
+    this.setState(INITIAL_STATE);
+  }
 
   simulateRecursion = async (less, greater) => {
     const lessPivot = less[0];
@@ -46,6 +54,7 @@ class QuickSort extends React.Component {
       };
     }
     this.setState({ hasBeenSorted: true });
+    this.setState({ resetDisabled: false });
   };
 
   quicksort = async (array) => {
@@ -70,50 +79,55 @@ class QuickSort extends React.Component {
   };
 
   render() {
-    const { array, secondArray, arrayOfPivots, hasBeenQuickSorted, comparedValues, hasBeenSorted } = this.state;
+    const { array, secondArray, 
+      arrayOfPivots, hasBeenQuickSorted, comparedValues, hasBeenSorted, resetDisabled, orderDisabled } = this.state;
     return (
       <>
-        <h1>Algoritmo Quick Sort</h1>
-        <h2>Quick Sort:</h2>
+        <h1 className="quick-sort-text">Algoritmo Quick Sort</h1>
+        <h2 className="quick-sort-text">Quick Sort:</h2>
         <div className="quicksort-container">
           {hasBeenQuickSorted
-            ? array.map((number) => <div className="all-sorted"><p>{number}</p></div>)
-            : array.map((number) => {
+            ? array.map((number, index) => <div key={index} className="all-sorted"><p className="sort-number">{number}</p></div>)
+            : array.map((number, index) => {
                 if (arrayOfPivots?.includes(number)) {
                   return (
-                    <div className="pivot">
-                      <p>{number}</p>
+                    <div key={index} className="pivot">
+                      <p className="sort-number">{number}</p>
                     </div>
                   );
                 }
                 return (
-                  <div className="normal-number">
-                    <p>{number}</p>
+                  <div key={index} className="normal-number">
+                    <p className="sort-number">{number}</p>
                   </div>
                 );
               })}
         </div>
-        <h2>Sort convencional:</h2>
+        <h2 className="quick-sort-text">Sort convencional:</h2>
         <div className="quicksort-container">
           {hasBeenSorted ? (
-            secondArray.map((number) => <div className="all-sorted"><p>{number}</p></div>)
-          ) : (secondArray.map((number) =>  (
+            secondArray.map((number, index) => <div key={index} className="all-sorted"><p className="sort-number">{number}</p></div>)
+          ) : (secondArray.map((number, index) =>  (
             <div 
+              key={index}
               className={comparedValues.includes(number) ? 'pivot' : 'normal-number'}
             >
-              <p>{number}</p>
+              <p className="sort-number">{number}</p>
             </div>
           )))}
         </div>
         <button
           type="button"
+          disabled={orderDisabled}
           onClick={() => {
+            this.setState({resetDisabled: true, orderDisabled: true});
             this.quicksort(array);
             this.normalSort(secondArray);
           }}
         >
           Ordenar com Quick Sort e Sort
         </button>
+        <button disabled={resetDisabled} onClick={ () => this.reset() }>Resetar</button>
       </>
     );
   }
