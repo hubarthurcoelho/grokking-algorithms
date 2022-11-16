@@ -113,8 +113,7 @@ class BinarySearchPage extends Component {
       simpleIterationCount,
     } = this.state;
     return (
-      <>
-      <img className="background" src="https://wallpaper.dog/large/20394426.jpg" alt="background"/>
+      <div className="binary-page">
       <div className="binary-body">
         <h2>Pesquisa Binária</h2>
         <h3>O que é?</h3>
@@ -212,7 +211,7 @@ class BinarySearchPage extends Component {
           </button>
         </div>
       </div>
-      </>
+      </div>
     );
   }
 }
