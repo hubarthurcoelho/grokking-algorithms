@@ -5,9 +5,10 @@ class OptionInput extends React.Component {
        const { valores, onChange, item } = this.props;
        return(
             <label htmlFor="optValue">
-                Escolha seu numero:
+                Escolha seu número:
                 <select
                 id="optValue"
+                className="quick-sort-btn"
                 name="valorFind"
                 value={ item }
                 onChange={ onChange }

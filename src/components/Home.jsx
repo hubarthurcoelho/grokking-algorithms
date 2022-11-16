@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 class Home extends Component {
   render() {
     return (
-      <div>
+      <div className="home-container">
       <h1>Entendendo Algoritmos</h1>
       <h3>Algoritmos disponíveis:</h3>
-      <Link to="/binarySearch" >Pesquisa binária</Link>
-      <Link to="/quickSort" >Quick Sort</Link>
+      <Link className="links" to="/binarySearch" >Pesquisa binária</Link>
+      <Link className="links" to="/quickSort" >Quick Sort</Link>
       </div>
     );
   }

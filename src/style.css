@@ -23,15 +23,15 @@
   font-weight: bold;
 }
 
-.boundaries{
+.boundaries {
   border: 5px solid yellow;
 }
 
-.hunch{
+.hunch {
   border: 5px solid orangered;
 }
 
-.array-container{
+.array-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -74,5 +74,57 @@
 }
 
 .quick-sort-text {
-  color: black;
+  color: white;
+}
+
+.quick-sort-page {
+  height: 100vh;
+  background-image: url(https://wallpaper.dog/large/20394426.jpg);
+  background-size: cover;
+  padding: 10px 30px;
+}
+
+.btn-quicksort-container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.quick-sort-btn {
+  text-decoration: none;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 1px 10px;
+  margin: 10px;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.quick-sort-btn:disabled {
+  text-decoration: none;
+  background-color: rgba(0, 128, 0, 0.381);
+  color: white;
+  border: 2px solid rgba(0, 128, 0, 0.381);
+  border-radius: 8px;
+  padding: 5px;
+  margin: 10px;
+  width: 150px;
+  height: 40px;
+  cursor: inherit;
+}
+
+.quick-sort-btn:hover {
+  background-color: rgba(0, 128, 0, 0.381);
+}
+
+.quick-sort-btn:disabled:hover {
+  background-color: rgba(0, 128, 0, 0.381);
+}
+
+.start-binary-config {
+  display: flex;
+  align-items: center;
 }
