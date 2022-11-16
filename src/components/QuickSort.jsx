@@ -82,7 +82,7 @@ class QuickSort extends React.Component {
     const { array, secondArray, 
       arrayOfPivots, hasBeenQuickSorted, comparedValues, hasBeenSorted, resetDisabled, orderDisabled } = this.state;
     return (
-      <>
+      <div className="quick-sort-page">
         <h1 className="quick-sort-text">Algoritmo Quick Sort</h1>
         <h2 className="quick-sort-text">Quick Sort:</h2>
         <div className="quicksort-container">
@@ -116,19 +116,22 @@ class QuickSort extends React.Component {
             </div>
           )))}
         </div>
-        <button
-          type="button"
-          disabled={orderDisabled}
-          onClick={() => {
-            this.setState({resetDisabled: true, orderDisabled: true});
-            this.quicksort(array);
-            this.normalSort(secondArray);
-          }}
-        >
-          Ordenar com Quick Sort e Sort
-        </button>
-        <button disabled={resetDisabled} onClick={ () => this.reset() }>Resetar</button>
-      </>
+        <div className="btn-quicksort-container">
+          <button
+            type="button"
+            className="quick-sort-btn"
+            disabled={orderDisabled}
+            onClick={() => {
+              this.setState({resetDisabled: true, orderDisabled: true});
+              this.quicksort(array);
+              this.normalSort(secondArray);
+            }}
+          >
+            Ordenar com Quick Sort e Sort
+          </button>
+          <button className="quick-sort-btn" disabled={resetDisabled} onClick={ () => this.reset() }>Resetar</button>
+        </div>
+      </div>
     );
   }
 }

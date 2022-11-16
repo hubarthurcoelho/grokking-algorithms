@@ -198,16 +198,19 @@ class BinarySearchPage extends Component {
           })}
         </article>
         <p>Número de iterações da pesquisa simples: { simpleIterationCount }</p>
-        <OptionInput valores={array} onChange={this.onChange} item={item} />
-        <button
-          disabled={btnDisabled}
-          onClick={() => {
-            this.simpleSearch(array, item);
-            this.binarySearch(array, item);
-          }}
-        >
-          Rodar Pesquisa Binária
-        </button>
+        <div className="start-binary-config">
+          <OptionInput valores={array} onChange={this.onChange} item={item} />
+          <button
+            className="quick-sort-btn"
+            disabled={btnDisabled}
+            onClick={() => {
+              this.simpleSearch(array, item);
+              this.binarySearch(array, item);
+            }}
+          >
+            Rodar Pesquisa Binária
+          </button>
+        </div>
       </div>
       </>
     );
