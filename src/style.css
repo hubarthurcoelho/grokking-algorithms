@@ -70,8 +70,9 @@
   box-sizing: border-box;
 }
 
-.binary-page {
+html {
   background-image: url(https://wallpaper.dog/large/20394426.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
