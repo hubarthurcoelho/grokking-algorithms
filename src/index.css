@@ -22,12 +22,12 @@ code {
   padding: 40px;
 }
 
+
 .pivot {
   background-color: green;
   border: 1px solid white;
   padding: 10px 40px;
   border-radius: 8px;
-
 }
 
 .normal-number {
@@ -77,4 +77,10 @@ code {
   height: 100vh;
   background-image: url(https://wallpaper.dog/large/20394426.jpg);
   background-size: cover;
+}
+
+@media (max-width: 860px) {
+  .normal-number {
+    padding: 10px;
+  }
 }
